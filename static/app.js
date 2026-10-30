@@ -12,17 +12,17 @@ function status(message, error = false) {
   statusBox.textContent = message;
   statusBox.classList.toggle('error', error);
 }
-function programLabel(kind) { return ({artist:'Music salon', movie:'Film circle', book:'Story circle'})[kind] || kind; }
+function programLabel(kind) { return ({artist:'Music & conversation', movie:'Film circle', book:'Story circle'})[kind] || kind; }
 
 function render(plan) {
   currentPlan = plan;
   const seeds = document.getElementById('seed-strip');
-  seeds.innerHTML = `<span class="seed-chip">♪ ${escapeHtml(plan.seeds[0].name)}</span><span class="seed-arrow">+</span><span class="seed-chip">▣ ${escapeHtml(plan.seeds[1].name)}</span><span class="seed-arrow">→</span><span class="seed-chip">✳ Shared taste</span>`;
+  seeds.innerHTML = `<span class="seed-chip">♪ ${escapeHtml(plan.seeds[0].name)}</span><span class="seed-arrow">+</span><span class="seed-chip">▣ ${escapeHtml(plan.seeds[1].name)}</span><span class="seed-arrow">→</span><span class="seed-chip">✳ Related activity ideas</span>`;
   document.getElementById('cards').innerHTML = plan.programs.map((p, i) => `
     <article class="program-card">
       <div class="card-top"><div class="card-number">0${i+1} / ${escapeHtml(programLabel(p.kind))}</div>
-        <h3>${escapeHtml(p.title)}</h3><div class="anchor">Qloo anchor · ${escapeHtml(p.anchor)}</div>
-        <p class="card-why">${escapeHtml(p.why_it_fits)}</p></div>
+        <h3>${escapeHtml(p.title)}</h3><div class="anchor">Related recommendation · ${escapeHtml(p.anchor)}</div>
+        <p class="card-why"><strong>Why this was suggested:</strong> ${escapeHtml(p.why_it_fits)}</p></div>
       <div class="card-bottom"><div class="card-badges"><span class="badge">${p.duration} min</span><span class="badge">Staff review</span></div>
         <ul><li>${escapeHtml(p.steps[0] || p.opening)}</li><li>${escapeHtml(p.access_note)}</li></ul>
         <button class="approve-button" data-index="${i}">Choose this activity ↗</button></div>

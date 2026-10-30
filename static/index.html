@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f1e8">
-  <meta name="description" content="MosaicHour turns residents' cultural favorites into thoughtful, accessible group activities using Qloo's taste graph.">
-  <title>MosaicHour — make room for what they love</title>
+  <meta name="description" content="Discover group activities for senior citizens based on their favorite music and films. MosaicHour helps senior living staff plan sessions around residents’ interests.">
+  <title>MosaicHour — personalized activities for seniors</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -15,28 +15,34 @@
 <body>
   <header class="topbar shell">
     <a class="brand" href="/" aria-label="MosaicHour home"><span class="brand-mark">✳</span><span>Mosaic<span class="brand-light">Hour</span></span></a>
-    <span class="header-note">A Qloo-powered planning studio</span>
+    <span class="header-note">Activity planning for senior living</span>
   </header>
 
   <main>
     <section class="hero shell">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-dot"></span> FOR LIFE ENRICHMENT TEAMS</div>
-        <h1>Make room for<br><em>what they love.</em></h1>
-        <p class="hero-lead">Turn the music and stories residents already care about into group activities that feel like theirs.</p>
-        <div class="hero-micro"><span>✦</span> Two favorites in <span class="sep">/</span> Three thoughtful drafts out <span class="sep">/</span> Staff make the call</div>
+        <div class="eyebrow"><span class="eyebrow-dot"></span> FOR SENIOR CITIZENS & THE TEAMS WHO SUPPORT THEM</div>
+        <h1>Activities for seniors.<br><em>Inspired by what they love.</em></h1>
+        <p class="hero-lead">Help senior citizens discover group activities connected to their interests. Enter a favorite musician and film; get three music, film and storytelling activities for staff to review, adapt and run.</p>
+        <div class="hero-micro"><span>✦</span> Their favorites <span class="sep">/</span> Related activity ideas <span class="sep">/</span> A staff-reviewed plan</div>
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-        <div class="art-card art-card-one"><span>♪</span><strong>Music</strong><small>the stories we sing</small></div>
-        <div class="art-card art-card-two"><span>▣</span><strong>Film</strong><small>the scenes we share</small></div>
-        <div class="art-card art-card-three"><span>✺</span><strong>Books</strong><small>the worlds we keep</small></div>
+        <div class="art-card art-card-one"><span>♪</span><strong>Music</strong><small>listening & conversation</small></div>
+        <div class="art-card art-card-two"><span>▣</span><strong>Film</strong><small>film discussion</small></div>
+        <div class="art-card art-card-three"><span>✺</span><strong>Books</strong><small>storytelling together</small></div>
         <div class="art-center">Qloo<br><small>taste graph</small></div>
       </div>
     </section>
 
+    <section class="how-it-works shell" aria-label="How MosaicHour works">
+      <div><span class="eyebrow">01 / SHARE THEIR TASTES</span><h3>Start with what they love</h3><p>A favorite musician and film give the planner a starting point. Interests guide the suggestions, rather than age alone.</p></div>
+      <div><span class="eyebrow">02 / DISCOVER RELATED IDEAS</span><h3>Find a familiar connection</h3><p>Qloo recommends related music, films and books. AI builds three group activity ideas around those discoveries.</p></div>
+      <div><span class="eyebrow">03 / MAKE IT WORK FOR YOUR GROUP</span><h3>Review, choose and print</h3><p>Consider your seniors’ access needs, time and budget. Staff choose an activity and print a guide for running the session.</p></div>
+    </section>
+
     <section class="studio shell" id="studio">
-      <div class="section-head"><div><div class="eyebrow">01 / THE INPUT</div><h2>Start with their favorites.</h2></div><p>No resident names or health records needed. Use interests shared by the group.</p></div>
+      <div class="section-head"><div><div class="eyebrow">01 / THE INPUT</div><h2>What does your senior group enjoy?</h2></div><p>For senior living activity coordinators. Start with interests shared by your group, then choose time, budget and an access priority. No names or health records needed.</p></div>
       <form id="plan-form" class="form-panel">
         <div class="form-grid">
           <label>Favorite musician or band<input name="artist" id="artist" value="Frank Sinatra" required minlength="2" maxlength="100" placeholder="e.g. Frank Sinatra"></label>
@@ -46,24 +52,24 @@
           <label>Supply budget<input name="budget" type="number" value="30" min="0" max="500" required><span class="field-suffix">USD</span></label>
           <label>Access priority<select name="access_need"><option value="seated" selected>Seated participation</option><option value="hearing">Hearing friendly</option><option value="vision">Vision friendly</option><option value="quiet">Quiet / smaller group</option></select></label>
         </div>
-        <div class="form-footer"><p>Activities are suggestions for staff review. Check content rights and suitability before running one.</p><button type="submit" id="submit-button">Find the shared thread <span>↗</span></button></div>
+        <div class="form-footer"><p>Activities are suggestions for staff review. Check content rights and suitability before running one.</p><button type="submit" id="submit-button">Find activities for seniors <span>↗</span></button></div>
       </form>
       <div id="status" class="status" role="status" aria-live="polite" hidden></div>
     </section>
 
     <section id="results" class="results shell" hidden>
-      <div class="section-head"><div><div class="eyebrow">02 / THE DISCOVERY</div><h2>One shared thread. Three ways in.</h2></div><p>Each cultural anchor below came from Qloo's taste graph, using both favorites together.</p></div>
+      <div class="section-head"><div><div class="eyebrow">02 / THE DISCOVERY</div><h2>Three activities inspired by their interests.</h2></div><p>Compare the ideas, read why each was suggested, then choose one to print a staff run sheet.</p></div>
       <div class="seed-strip" id="seed-strip"></div>
       <div class="cards" id="cards"></div>
       <div class="evidence-grid">
-        <section class="evidence-card"><div class="eyebrow">THE TASTE BRIDGE</div><h3>Why these, not bingo?</h3><p>Qloo connected both starting favorites to music, film and books. The descriptions and activity steps are AI drafts for staff review. Open the agent trail to see the calls behind the plan.</p><div id="candidate-lists" class="candidate-lists"></div></section>
+        <section class="evidence-card"><div class="eyebrow">THE TASTE BRIDGE</div><h3>Why were these activities suggested?</h3><p>Qloo finds related musicians, films and books using both favorites together. AI turns those recommendations into group activity drafts. The explanations describe a possible fit; staff decide what suits their residents.</p><div id="candidate-lists" class="candidate-lists"></div></section>
         <section class="evidence-card compare"><div class="eyebrow">THE DIFFERENCE</div><h3>From default to personal.</h3><div class="compare-line"><span>Without a taste signal</span><strong>Bingo · Movie night · Trivia</strong></div><div class="compare-line"><span>With Qloo</span><strong id="with-qloo">Specific cultural anchors for this group</strong></div><p class="fine">The default list is an illustration of a generic calendar, not an AI benchmark.</p></section>
       </div>
       <details class="trace"><summary>See how the agents worked <span>↗</span></summary><div id="trace-rows"></div></details>
     </section>
   </main>
 
-  <footer class="footer shell"><div class="brand"><span class="brand-mark">✳</span><span>Mosaic<span class="brand-light">Hour</span></span></div><p>Better programs begin with listening. Built for the Qloo Agentic Hackathon.</p><a href="https://qloo.devpost.com/" target="_blank" rel="noopener">About the challenge ↗</a></footer>
+  <footer class="footer shell"><div class="brand"><span class="brand-mark">✳</span><span>Mosaic<span class="brand-light">Hour</span></span></div><p>Personalized group activity ideas for senior citizens. Built for the Qloo Agentic Hackathon.</p><a href="https://qloo.devpost.com/" target="_blank" rel="noopener">About the challenge ↗</a></footer>
 
   <div id="print-sheet" hidden></div>
 </body>
