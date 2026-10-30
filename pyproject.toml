@@ -1,0 +1,29 @@
+[project]
+name = "mosaichour"
+version = "0.1.0"
+description = "Qloo-grounded social activity planning for senior living staff"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.116",
+  "google-genai>=1.30",
+  "httpx>=0.28",
+  "langgraph>=0.6",
+  "pydantic>=2.11",
+  "python-dotenv>=1.1",
+  "uvicorn[standard]>=0.35",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mosaichour*"]
+
+[dependency-groups]
+dev = ["pytest>=8.4", "pytest-asyncio>=1.1"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

@@ -1,0 +1,1 @@
+"""MosaicHour application."""
