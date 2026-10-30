@@ -43,13 +43,6 @@ uv run uvicorn mosaichour.main:app --reload
 
 Open `http://localhost:8000`. Run tests with `uv run pytest -q`.
 
-## Honest limits
-
-- MosaicHour has not been tested with a facility or measured against participation or staff-time outcomes.
-- Budget is a supply ceiling entered by staff; the app does not price supplies.
-- Staff must check content rights, availability, resident preferences and accessibility before running an activity.
-- Plans and approvals are held in server memory and expire when the instance restarts.
-- The app does not collect resident names, diagnoses or medication information, and it makes no clinical recommendations.
 
 ## Stack
 
