@@ -2,7 +2,7 @@
 
 **Make room for what residents love.** MosaicHour helps senior living life-enrichment staff turn two shared cultural favorites into three group activity drafts. It is a separate Qloo Agentic Hackathon entry from Headcount.
 
-The app takes a favorite musician and film, group size, session length, supply budget and an access priority. Staff see three Qloo-grounded options, choose one and print a run sheet. No sign-in or resident names are required.
+Try the [live app](https://mosaichour-786561239973.us-central1.run.app). It takes a favorite musician and film, group size, session length, supply budget and an access priority. Staff see three Qloo-grounded options, choose one and print a run sheet. No sign-in or resident names are required.
 
 ## Why this problem
 
